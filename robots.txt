@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://wolet.github.io/sitemap.xml 
+Sitemap: http://wolet.github.com/sitemap.xml 

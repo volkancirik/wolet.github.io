@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://wolet.github.io/atom.xml" rel="self"/>
-  <link href="http://wolet.github.io/"/>
-  <updated>2016-01-15T17:51:34-05:00</updated>
-  <id>http://wolet.github.io/</id>
+  <title><![CDATA[Weblog of Volkan Cirik]]></title>
+  <link href="http://wolet.github.com/atom.xml" rel="self"/>
+  <link href="http://wolet.github.com/"/>
+  <updated>2016-01-15T17:52:51-05:00</updated>
+  <id>http://wolet.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Volkan Cirik]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://wolet.github.io/blog/hello-world/"/>
+    <link href="http://wolet.github.com/blog/hello-world/"/>
     <updated>2016-01-15T17:36:59-05:00</updated>
-    <id>http://wolet.github.io/blog/hello-world</id>
+    <id>http://wolet.github.com/blog/hello-world</id>
     <content type="html"><![CDATA[<p>hi! the shorter version of hello.</p>
 ]]></content>
   </entry>
