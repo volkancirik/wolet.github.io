@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Misc | Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/blog/categories/misc/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2016-01-15T18:30:03-05:00</updated>
+  <updated>2016-01-15T18:33:59-05:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -22,7 +22,8 @@
 
 <p>in my last semester at cmu i am taking advance multi-modal machine learning. it is a mixture of seminar+lab course i.e you read a bunch of papers + get hands on experience with problems/models. one of the requirements is that you have to post a short summary of each week’s reading to instructors. i plan to use this as an excuse to keep a blag. we’ll see how it goes.</p>
 
-<p>and here’s a test for a math equation <script type="math/tex">x_t = x_{t-1} + y_t</script></p>
+<p>and here’s a test for a math equation 
+<script type="math/tex">x_t = x_{t-1} + y_t</script></p>
 ]]></content>
   </entry>
   
