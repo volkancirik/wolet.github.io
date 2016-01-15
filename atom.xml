@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://wolet.github.io/atom.xml" rel="self"/>
   <link href="http://wolet.github.io/"/>
-  <updated>2016-01-15T17:47:49-05:00</updated>
+  <updated>2016-01-15T17:51:34-05:00</updated>
   <id>http://wolet.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://wolet.github.io/blog/2016/01/15/hello-world/"/>
+    <link href="http://wolet.github.io/blog/hello-world/"/>
     <updated>2016-01-15T17:36:59-05:00</updated>
-    <id>http://wolet.github.io/blog/2016/01/15/hello-world</id>
+    <id>http://wolet.github.io/blog/hello-world</id>
     <content type="html"><![CDATA[<p>hi! the shorter version of hello.</p>
 ]]></content>
   </entry>
