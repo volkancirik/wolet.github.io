@@ -66,37 +66,47 @@
   <script src="/javascripts/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
-<body id="article">
+<body id="post">
 
   <div id="container">
-    <header>
-    <h2> Blog Archive</h2>
-</header>
-
+    <nav role="navigation" ><ul class="main-navigation">
+  <li style='float:left;margin-right:5px'><a class='nav' href="/">Home</a></li>
+</ul><br><br>
+</nav>
     <article>
-  <h1 class="article-title">About</h1>
-  <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wolet.github.com/about/index.html" data-via="volkancirik" data-counturl="http://wolet.github.com/about/index.html" >Tweet</a>
-  
-  
-</div>
 
+
+  <h1 class="article-title">About</h1>
   <div class="article-content"><p>I am second year MLT student at the <a href="http://lti.cs.cmu.edu">LTI</a> of <a href="http://www.cmu.edu/">CMU</a>. I am very fortunate to be advised by <a href="https://www.cs.cmu.edu/~hovy/">Ed Hovy</a> and <a href="http://www.cs.cmu.edu/~morency/">Louis-Philippe Morency</a> . I was a member of <a href="http://www.denizyuret.com/">Deniz Yuret</a>’s AI-LAB. I am interested in AI. The personal website is <a href="http://www.cs.cmu.edu/~vcirik/">here</a>.</p>
 </div>
+  
+    <section>
+      <h1>Comments</h1>
+      <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'wolet-github';
+  var disqus_identifier = 'http://wolet.github.com/about/index.html';
+  var disqus_url = 'http://wolet.github.com/about/index.html';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </section>
+  
+
 </article>
 
-       <footer role="contentinfo" >
-    	<p>
-		Copyright &copy; 2016 - Volkan Cirik -
-		 <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> |
-		 <span class="credit">Themed with <a href="https://github.com/rwwaskk/linkedlist">LinkedList</a></span>
-	</p>
-    </footer>
 
-
+      <p class="meta">
+      
+      
+    </p>
   </div>
-
     <script>
       var name = document.getElementById('name-helper').innerHTML;
 
