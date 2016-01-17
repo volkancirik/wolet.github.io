@@ -4,7 +4,7 @@
   <title><![CDATA[Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2016-01-16T20:56:00-05:00</updated>
+  <updated>2016-01-16T20:57:52-05:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -57,7 +57,7 @@ Let’s introduce some notation before explaining priors. Our aim to learn a fun
 
 <p><img src="https://dl.dropboxusercontent.com/s/p40jirtw49ecz7g/distributed_representations.png" alt="distributed representations rox" /></p>
 
-<p>Let me elaborate using above example from <a href="http://www.iro.umontreal.ca/~bengioy/papers/ftml_book.pdf">Bengio 2009</a>. Using only 3 features, one can separate 7 regions. Unlike learners of one hot representations which all require $O(N) parameters to distinguish $O(N) input regions$, learners of distributed representations e.g RBMs, can distinguish $O(2^k)$ input regions using only $O(N)$ parameters. The main reason is each unit/region separator benefits from many examples, even if these examples are not neighbors at all, for tuning the parameters. Another way to look at it : for a sample $x$, a subset of features/units/region separators will be activated thus will be used to learn their parameters.</p>
+<p>Let me elaborate using above example from <a href="http://www.iro.umontreal.ca/~bengioy/papers/ftml_book.pdf">Bengio 2009</a>. Using only 3 features, one can separate 7 regions. Unlike learners of one hot representations which all require $O(N)$ parameters to distinguish $O(N)$ input regions, learners of distributed representations e.g RBMs, can distinguish $O(2^k)$ input regions using only $O(N)$ parameters. The main reason is each unit/region separator benefits from many examples, even if these examples are not neighbors at all, for tuning the parameters. Another way to look at it : for a sample $x$, a subset of features/units/region separators will be activated thus will be used to learn their parameters.</p>
 
 <p><strong>Depth and Abstraction</strong> : The depth, the length of the longest path from input node to output node, provides two advantages. First, feature re-use, which I don’t fully understand. However, one remark is very important. Deep models learn exponantially more efficient than shallow counterparts which suggest that they require fewer parameters, consequently, can be learned with fewer examples. Second, in deep architectures, each level provides the ground for more abstract representations. More abstract concepts are usually sensitive to specific changes on the lower concepts (invariance).</p>
 
