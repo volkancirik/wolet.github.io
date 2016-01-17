@@ -16,12 +16,13 @@ How we represent the data to a Machine Learning (ML) model's determines its sens
 We observe the impact of Representation Learning (RL) and Deep Learning (DL) in different domains. Early success of these models are in Speech Recognition. Now, we have many solutions for masses (such as Siri, Cortana, Google Now and Echo). The resurgence of DL models happenned on Object Recognition [(Krizhevsky et al., 2012)](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf). One of the main focus of the DL community is Natural Language Processing (NLP) and [Bengio et. al. 2003](http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) and [Collobert et al. 2011](http://www.jmlr.org/papers/volume12/collobert11a/collobert11a.pdf) are prominent examples of the success of DL. Most notably, the success of DL models on Multi-Task and Transfer Learning challenges shows that the RL algorithms resulting representations capture underlying factors which may be relevant to different tasks. I think any DL-based models using pre-trained word vectors (whether the model finetunes it or not) are supporting this claim of the paper.
 
 A recipe for good representation is below. I'll shortly review each of the bullet points:
-- Must satisfy some of the priors about the world around us
-- Smoothness and the Curse Of Dimensionality
-- Distributed Representations
-- Depth and Abstraction
-- Disentangling Factors of Variation
-- Good Criteria For Learning Representations
+
+* Must satisfy some of the priors about the world around us
+* Smoothness and the Curse Of Dimensionality
+* Distributed Representations
+* Depth and Abstraction
+* Disentangling Factors of Variation
+* Good Criteria For Learning Representations
 
 **Priors for Representation Learning in AI**
 Let's introduce some notation before explaining priors. Our aim to learn a function $f$ of input $X$ to output $Y$. $x$ is an instance of input $X$ and the value we want to learn with $f$ is $y$. A good representation should satisft some of the below priors:
