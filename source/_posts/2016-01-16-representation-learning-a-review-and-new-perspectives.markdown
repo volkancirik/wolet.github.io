@@ -7,7 +7,7 @@ categories: reading
 ---
 
 The first reading of the semester is from Bengio et. al. ["Representation Learning: A Review and New
-Perspectives"](http://arxiv.org/pdf/1206.5538.pdf). The paper's motivation is threefold : what are the 1) *right objectives* to learn *good representations*, 2) how do we compute these representations, 3) what is the connection between representation learning, **density estimation** and **manifold learning**.
+Perspectives"](http://arxiv.org/pdf/1206.5538.pdf). The paper's motivation is threefold : what are the 1) *right objectives* to learn *good representations*, 2) how do we compute these representations, 3) what is the connection between **representation learning**, **density estimation** and **manifold learning**.
 
 ------
 
