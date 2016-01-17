@@ -1,0 +1,314 @@
+<!doctype html>
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- ---- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Representation Learning: A Review and New Perspectives |  Volkan Cirik</title>
+  <meta name="author" content="Volkan Cirik">
+  
+
+  
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <!-- CSS: implied media=all -->
+  <!-- CSS concatenated and minified via ant build script-->
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <!-- end CSS-->
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
+       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="/javascripts/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body id="post">
+
+  <div id="container">
+    <nav role="navigation" ><ul class="main-navigation">
+  <li style='float:left;margin-right:5px'><a class='nav' href="/">Home</a></li>
+</ul><br><br>
+</nav>
+    <article>
+
+
+  <h1 class="article-title">Representation Learning: A Review and New Perspectives</h1>
+  <div class="article-content"><p>The first reading of the semester is from Bengio et. al. <a href="http://arxiv.org/pdf/1206.5538.pdf">“Representation Learning: A Review and New
+Perspectives”</a>. The paper’s motivation is threefold : what are the 1) <em>right objectives</em> to learn <em>good representations</em>, 2) how do we compute these representations, 3) what is the connection between representation learning, <strong>density estimation</strong> and <strong>manifold learning</strong>.</p>
+
+<hr />
+
+<p>How we represent the data to a Machine Learning (ML) model’s determines its sense of domain, consequently, its success. For many domains, feature engineering is one of the earliers steps in a ML pipeline. This labor-intensive effort shows that the existing ML algorithms, or the setup, is not able to extract discrimative information from raw data. To make prograss towards Artificial Intelligence (AI), our solutions shout be able to <strong>identify and disentagle the underlying explanatory hidden factors</strong> of the raw data.</p>
+
+<p>We observe the impact of Representation Learning (RL) and Deep Learning (DL) in different domains. Early success of these models are in Speech Recognition. Now, we have many solutions for masses (such as Siri, Cortana, Google Now and Echo). The resurgence of DL models happenned on Object Recognition <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">(Krizhevsky et al., 2012)</a>. One of the main focus of the DL community is Natural Language Processing (NLP) and <a href="http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Bengio et. al. 2003</a> and <a href="http://www.jmlr.org/papers/volume12/collobert11a/collobert11a.pdf">Collobert et al. 2011</a> are prominent examples of the success of DL. Most notably, the success of DL models on Multi-Task and Transfer Learning challenges shows that the RL algorithms resulting representations capture underlying factors which may be relevant to different tasks. I think any DL-based models using pre-trained word vectors (whether the model finetunes it or not) are supporting this claim of the paper.</p>
+
+<p>A recipe for good representation is below. I’ll shortly review each of the bullet points:
+- Must satisfy some of the priors about the world around us
+- Smoothness and the Curse Of Dimensionality
+- Distributed Representations
+- Depth and Abstraction
+- Disentangling Factors of Variation
+- Good Criteria For Learning Representations</p>
+
+<p><strong>Priors for Representation Learning in AI</strong>
+Let’s introduce some notation before explaining priors. Our aim to learn a function $f$ of input $X$ to output $Y$. $x$ is an instance of input $X$ and the value we want to learn with $f$ is $y$. A good representation should satisft some of the below priors:</p>
+
+<ul>
+  <li><strong>smoothness</strong> : for $x \approx y$ implies $f(x) \approx f(y)$.</li>
+  <li><strong>multiple explanatory factors</strong> : the distribution generating the data has a set of underlying factors.</li>
+  <li><strong>a hierarchical organization of explanatory factors</strong> : the abstract concepts explaining the world can be decomposed into less abstract ones.</li>
+  <li><strong>semi-supervised learning</strong> : things explaining $P(X)$ tend to be useful for learning $P(Y \mid X)$. (e.g word embeddings learned during Language Modelling (LM) in general useful for supervised tasks).</li>
+  <li><strong>shared factors across tasks</strong> : the factors explaining $P(Y \mid X,task)$, shared with other tasks (e.g multi-task learning)</li>
+  <li><strong>manifolds</strong> : there is a smaller space than original space where the probability mass is concentrated</li>
+  <li><strong>natural clustering</strong> : local variations on the manifold tend to preserve the category of the instances that live on that manifold</li>
+  <li><strong>temporal &amp; spacial coherence</strong> : consecutive or spatially nearby observations tend to be in the same neighborhood on the manifold, thus preserving relevant categorical concepts</li>
+  <li><strong>sparsity</strong> : only a small subset of factors are <em>active</em> or relevant for an instance $x$.</li>
+  <li><strong>simplicity of factor dependencies</strong> : factors explaining the data, are related to each other through simple (e.g linear) dependencies.</li>
+</ul>
+
+<p><strong>Smoothness and the Curse Of Dimensionality</strong> : Non-parametric learners assume that $f$ is smooth enough and they can rely on examples to expilicityl map out the wrinkles (i.e how it behaves around instances) of the target function. But, the number of such wrinkles (i.e variance of $f$) may grow exponentially with the number of interacting factors when the represented data in raw space. Instead, they propose to use these non-parametric learners on top of learned representations. Learned representations will provide the similarity metric which is the core need of a non-parametric model such as kernel machines.</p>
+
+<p><strong>Distributed Representations</strong> : Distributed representations provide an exponential gain in learning the hyperplanes separating the data into regions.</p>
+
+<p><img src="https://dl.dropboxusercontent.com/s/p40jirtw49ecz7g/distributed_representations.png" alt="distributed representations rox" /></p>
+
+<p>Let me elaborate using above example from <a href="http://www.iro.umontreal.ca/~bengioy/papers/ftml_book.pdf">Bengio 2009</a>. Using only 3 features, one can separate 7 regions. Unlike learners of one hot representations which all require $O(N) parameters to distinguish $O(N) input regions$, learners of distributed representations e.g RBMs, can distinguish $O(2^k)$ input regions using only $O(N)$ parameters. The main reason is each unit/region separator benefits from many examples, even if these examples are not neighbors at all, for tuning the parameters. Another way to look at it : for a sample $x$, a subset of features/units/region separators will be activated thus will be used to learn their parameters.</p>
+
+<p><strong>Depth and Abstraction</strong> : The depth, the length of the longest path from input node to output node, provides two advantages. First, feature re-use, which I don’t fully understand. However, one remark is very important. Deep models learn exponantially more efficient than shallow counterparts which suggest that they require fewer parameters, consequently, can be learned with fewer examples. Second, in deep architectures, each level provides the ground for more abstract representations. More abstract concepts are usually sensitive to specific changes on the lower concepts (invariance).</p>
+
+<p><strong>Disentangling Factors of Variation</strong> : A good representation should disentangle as many factors as possible while discarding as little information about the data as useful. This smells a lot like allegedly <a href="http://quoteinvestigator.com/2011/05/13/einstein-simple/">Einstein’s simplicity quote</a> and the concept of Occam’s Razor.</p>
+
+<p><strong>Good Criteria For Learning Representations</strong> : We hope a good representation satisfy many criteria but it is an open problem to turn these criteria into objectives in an ML model.</p>
+
+<p>(to be continued)</p>
+</div>
+  
+    <section>
+      <h1>Comments</h1>
+      <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'wolet-github';
+  var disqus_identifier = 'http://wolet.github.com/blog/representation-learning-a-review-and-new-perspectives/';
+  var disqus_url = 'http://wolet.github.com/blog/representation-learning-a-review-and-new-perspectives/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </section>
+  
+
+</article>
+
+
+      <p class="meta">
+      
+        <a class="basic-alignment left nav" href="/blog/hello-world/" title="Previous Post: Hello World!">&laquo; Hello World!</a>
+      
+      
+    </p>
+  </div>
+    <script>
+      var name = document.getElementById('name-helper').innerHTML;
+
+      var canvas = document.getElementById('myCanvas');
+
+      //The name (up to 28 characters long, including white space)
+      var length = name.length;
+      if (length>28){//Exceed character length limit, remove canvas
+          canvas.remove();
+      }
+      else{
+            
+
+        var context = canvas.getContext('2d');
+
+        //calculate width and length
+        var width=700/1.25/length;
+        var start;
+        if (width>40){
+          width=40;
+        }
+
+        var height= width/2;
+
+        //the start postion of the link list
+        var start = (700-width*length*1.25)/2;
+        var horizon = 5;
+
+        //DO NOT CHANGE THOSE
+        var mid_horizon = horizon+height/2;
+        var name_counter =0;
+
+        var x = height/5;
+        var y = height/5;
+        var interval=width/4;
+        
+        var radius = 0.75*width;
+        
+        var text_pos=width*1.1;
+
+
+        canvas.height=mid_horizon+width/2+width/2.1+5;
+        
+        for (var i=1;i<name.length+1;i++){
+
+          context.beginPath();
+          context.strokeStyle='#F9BF3B';
+          
+          //the rectangle
+          context.rect(start, horizon, width, height);
+
+          //the middle line
+          context.moveTo(start+width/2,horizon);
+          context.lineTo(start+width/2,horizon+height);
+
+          //if this is the last element
+          if (i==name.length){
+            context.moveTo(start+width/2,horizon+height);
+            context.lineTo(start+width,horizon);
+
+          }
+          else{
+            //the arrow
+            context.moveTo(start+0.75*width,mid_horizon);
+            context.lineTo(start+width+interval,mid_horizon);
+
+            context.moveTo(start+width+interval,mid_horizon);
+            context.lineTo(start+width+interval-x,mid_horizon+y);
+          
+            context.moveTo(start+width+interval,mid_horizon);
+            context.lineTo(start+width+interval-x,mid_horizon-y); 
+          }
+          
+       
+        
+          var startAngle = 1.2 * Math.PI;
+          var endAngle = 1 * Math.PI;
+          var counterClockwise = true;
+      
+          context.stroke();
+            
+          context.beginPath();
+          context.arc(start+width/4+radius*0.81, mid_horizon+width/2, radius, startAngle, endAngle, counterClockwise);
+
+          context.moveTo(start+width/4+radius*0.81-radius,mid_horizon+width/2);
+          context.lineTo(start+width/4+radius*0.81-radius-x,mid_horizon-y+width/2);
+
+          context.moveTo(start+width/4+radius*0.81-radius,mid_horizon+width/2);
+          context.lineTo(start+width/4+radius*0.81-radius+x,mid_horizon-y+width/2); 
+
+          context.font = ' 15pt Calibri';
+          context.fillStyle = '#859900';
+          context.fillText(name.charAt(name_counter), start+width/4+radius*0.81-radius-width/14, mid_horizon+width/2+width/2.1);
+
+          context.lineWidth=1;
+          context.strokeStyle='#F9BF3B';
+          context.stroke();
+          start+=width/2*2+interval;      
+          name_counter+=1;
+        }
+      }
+
+    </script>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="/javascripts/app.js"></script>
+  <!-- end scripts-->
+
+	
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+ 
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39225214-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+</body>
+</html>
+

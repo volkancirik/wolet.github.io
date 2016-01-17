@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Weblog of Volkan Cirik]]></title>
-  <link href="http://wolet.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Reading | Weblog of Volkan Cirik]]></title>
+  <link href="http://wolet.github.com/blog/categories/reading/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
   <updated>2016-01-16T20:56:00-05:00</updated>
   <id>http://wolet.github.com/</id>
@@ -66,20 +66,6 @@ Let’s introduce some notation before explaining priors. Our aim to learn a fun
 <p><strong>Good Criteria For Learning Representations</strong> : We hope a good representation satisfy many criteria but it is an open problem to turn these criteria into objectives in an ML model.</p>
 
 <p>(to be continued)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://wolet.github.com/blog/hello-world/"/>
-    <updated>2016-01-15T17:36:59-05:00</updated>
-    <id>http://wolet.github.com/blog/hello-world</id>
-    <content type="html"><![CDATA[<p>hi! the shorter version of hello.</p>
-
-<p>in my last semester at cmu i am taking advanced multi-modal machine learning. it is a mixture of seminar+lab course i.e you read a bunch of papers + get hands on experience with problems/models. one of the requirements is that you have to post a short summary of each week’s reading to instructors. i plan to use this as an excuse to keep a blag. we’ll see how it goes.</p>
-
-<p>and here’s a test for a math equation 
-<script type="math/tex">x_t = x_{t-1} + y_t</script></p>
 ]]></content>
   </entry>
   
