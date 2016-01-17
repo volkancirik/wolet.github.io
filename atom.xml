@@ -4,7 +4,7 @@
   <title><![CDATA[Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2016-01-17T13:48:33-05:00</updated>
+  <updated>2016-01-17T13:50:06-05:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -95,7 +95,7 @@ Let’s introduce some notation before explaining priors. Our aim to learn a fun
     <id>http://wolet.github.com/blog/hello-world</id>
     <content type="html"><![CDATA[<p>hi! the shorter version of hello.</p>
 
-<p>in my last semester at cmu i am taking advanced multi-modal machine learning. it is a mixture of seminar+lab course i.e you read a bunch of papers + get hands on experience with problems/models. one of the requirements is that you have to post a short summary of each week’s reading to instructors. i plan to use this as an excuse to keep a blag. we’ll see how it goes.</p>
+<p>in my last semester at cmu i am taking advanced multi-modal machine learning. it is a mixture of seminar+lab course i.e you read a bunch of papers + get hands on experience with problems/models. one of the requirements is that you have to post a short summary of each week’s reading to instructors. i plan to use this as an excuse to keep a <a href="https://xkcd.com/148/">blag</a>. we’ll see how it goes.</p>
 
 <p>and here’s a test for a math equation 
 <script type="math/tex">x_t = x_{t-1} + y_t</script></p>
