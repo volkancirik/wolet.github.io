@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Reading | Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/blog/categories/reading/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2016-01-16T21:20:16-05:00</updated>
+  <updated>2016-01-16T21:27:36-05:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -62,7 +62,7 @@ Let’s introduce some notation before explaining priors. Our aim to learn a fun
 
 <p>Let me elaborate using above example from <a href="http://www.iro.umontreal.ca/~bengioy/papers/ftml_book.pdf">Bengio 2009</a>. Using only 3 features, one can separate 7 regions. Unlike learners of one hot representations which all require $O(N)$ parameters to distinguish $O(N)$ input regions, learners of distributed representations e.g RBMs, can distinguish $O(2^k)$ input regions using only $O(N)$ parameters. The main reason is each unit/region separator benefits from many examples, even if these examples are not neighbors at all, for tuning the parameters. Another way to look at it : for a sample $x$, a subset of features/units/region separators will be activated thus will be used to learn their parameters.</p>
 
-<p><strong>Depth and Abstraction</strong> : The depth, the length of the longest path from input node to output node, provides two advantages. First, feature re-use, which I don’t fully understand. However, one remark is very important. Deep models learn exponantially more efficient than shallow counterparts which suggest that they require fewer parameters, consequently, can be learned with fewer examples. Second, in deep architectures, each level provides the ground for more abstract representations. More abstract concepts are usually sensitive to specific changes on the lower concepts (invariance).</p>
+<p><strong>Depth and Abstraction</strong> : The depth, the length of the longest path from input node to output node, provides two advantages. First one is feature re-use, which paper does not clearly explain. Let’s say one unit at layer $l$ detects edges, on layer $l+1$ other units such as detecting shapes rectangle or triangle will re-use this unit to detect their own concepts [Thanks <a href="www.cs.cornell.edu/~oirsoy/">Ozan</a> for explaining this].  One remark is very important in this subsection: Deep models learn exponantially more efficient than shallow counterparts <a href="http://deeplearning.cs.cmu.edu/pdfs/bianchini_scarselli.pdf">(Bianchini and Scarselli)</a> which suggest that they require fewer parameters, consequently, can be learned with fewer examples. Second, in deep architectures, each level provides the ground for more abstract representations. More abstract concepts are usually sensitive to specific changes on the lower concepts (invariance).</p>
 
 <p><strong>Disentangling Factors of Variation</strong> : A good representation should disentangle as many factors as possible while discarding as little information about the data as useful. This smells a lot like allegedly <a href="http://quoteinvestigator.com/2011/05/13/einstein-simple/">Einstein’s simplicity quote</a> and the concept of Occam’s Razor.</p>
 
