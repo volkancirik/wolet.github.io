@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Reading | Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/blog/categories/reading/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2016-01-16T20:57:52-05:00</updated>
+  <updated>2016-01-16T20:58:27-05:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -19,7 +19,7 @@
     <updated>2016-01-16T18:07:09-05:00</updated>
     <id>http://wolet.github.com/blog/representation-learning-a-review-and-new-perspectives</id>
     <content type="html"><![CDATA[<p>The first reading of the semester is from Bengio et. al. <a href="http://arxiv.org/pdf/1206.5538.pdf">“Representation Learning: A Review and New
-Perspectives”</a>. The paper’s motivation is threefold : what are the 1) <em>right objectives</em> to learn <em>good representations</em>, 2) how do we compute these representations, 3) what is the connection between representation learning, <strong>density estimation</strong> and <strong>manifold learning</strong>.</p>
+Perspectives”</a>. The paper’s motivation is threefold : what are the 1) <em>right objectives</em> to learn <em>good representations</em>, 2) how do we compute these representations, 3) what is the connection between <strong>representation learning</strong>, <strong>density estimation</strong> and <strong>manifold learning</strong>.</p>
 
 <hr />
 
