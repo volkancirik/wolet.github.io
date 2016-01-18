@@ -80,4 +80,12 @@ For undirected case, the joint distribution $p(x,h)$ is parametrized by product 
 
 Just like many other ML methods, gradient-based optimizitaion for RBM result in a gradient which acts like a move from model's distribution ($p( h , x)$) to data's distribution ($p( h \mid x)$). When equilibrium is reached, model distribution (=what our model tells) and data distribtuion (=what data shows) will be aligned. Unfortunately, calculating model's distribution ($p(h,x)$) is intractable and requires approximate methods such as MCMC -- using blocked Gibb's sampling so that our samples come from true joint distribution and we can estimate expectation necessary for gradient calculation.
 
-(to be continued)
+**Direct Mapping Input --> Representation**
+
+---
+One of the downsides of probabilistic models for learning representations is that we learn a posterior distribution over latent variables. We cannot directly use this distribution and need to derive the features out of it. Alternatively, we can learn a direct mapping from input to its representation with an **Autoencoder**. Using auto encoders we learn to encode the input $x$ to a feature space and decode the original input from that space. Unlike probabilistic models where we maximize the data likelihood, we aim to minimize the reconstruction error while avoiding learning the identity function. An interesting point to note : if encoder and decoder use a sigmoid non-linearity, it is equivalent to binary RBMs (think about conditionals $p(h \mid x)$,$p(x \mid h)$, and probabilistic interpretation of sigmoid).
+
+In **sparse autoencoders**, we add L1 penalty for encoded representations to objective function so that only few of the hidden units are on for each instances. In **denoising autoencoders**, we corrupt the original input with some noise. Assuming data concentrate on a lower dimensional manifold, corrupted input is almost orthogonal to manifold, thus the autoencoder learns to denoise --from low-probabilirt inputs to high-probability ones, thus, creating a vector field towards to the manifold. In **contractive autoencoders**, we aim to learn robust representations (= instensitive to small input variations) by penalizing the Jacobian matrix of the encoder. This penalty is analytic and we can blend in the contractive penalty with a hyperparameter. (in fact check out [my repo of autoencoder mixtures](https://github.com/wolet/autoencoders)).
+
+
+(to be continued from section 8)
