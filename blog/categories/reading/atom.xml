@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Reading | Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/blog/categories/reading/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2016-01-20T00:32:08-05:00</updated>
+  <updated>2016-01-20T00:44:25-05:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -58,7 +58,7 @@ Let’s introduce some notation before explaining priors. Our aim to learn a fun
   <li><strong>simplicity of factor dependencies</strong> : factors explaining the data, are related to each other through simple (e.g linear) dependencies.</li>
 </ul>
 
-<p><strong>Smoothness and the Curse Of Dimensionality</strong> : Non-parametric learners assume that $f$ is smooth enough and they can rely on examples to expilicityl map out the wrinkles (i.e how it behaves around instances) of the target function. But, the number of such wrinkles (i.e variance of $f$) may grow exponentially with the number of interacting factors when the represented data in raw space. Instead, they propose to use these non-parametric learners on top of learned representations. Learned representations will provide the similarity metric which is the core need of a non-parametric model such as kernel machines.</p>
+<p><strong>Smoothness and the Curse Of Dimensionality</strong> : Non-parametric learners assume that $f$ is smooth enough and they can rely on examples to explicitly map out the wrinkles (i.e how it behaves around instances) of the target function. But, the number of such wrinkles (i.e variance of $f$) may grow exponentially with the number of interacting factors when the represented data in raw space. Instead, they propose to use these non-parametric learners on top of learned representations. Learned representations will provide the similarity metric which is the core need of a non-parametric model such as kernel machines.</p>
 
 <p><strong>Distributed Representations</strong> : Distributed representations provide an exponential gain in learning the hyperplanes separating the data into regions.</p>
 
@@ -97,9 +97,9 @@ Let’s introduce some notation before explaining priors. Our aim to learn a fun
 <p><strong>Direct Mapping Input –&gt; Representation</strong></p>
 
 <hr />
-<p>One of the downsides of probabilistic models for learning representations is that we learn a posterior distribution over latent variables. We cannot directly use this distribution and need to derive the features out of it. Alternatively, we can learn a direct mapping from input to its representation with an <strong>Autoencoder</strong>. Using auto encoders we learn to encode the input $x$ to a feature space and decode the original input from that space. Unlike probabilistic models where we maximize the data likelihood, we aim to minimize the reconstruction error while avoiding learning the identity function. An interesting point to note : if encoder and decoder use a sigmoid non-linearity, it is equivalent to binary RBMs (think about conditionals $p(h \mid x)$,$p(x \mid h)$, and probabilistic interpretation of sigmoid).</p>
+<p>One of the downsides of probabilistic models for learning representations is that we learn a posterior distribution over latent variables. We cannot directly use this distribution and need to derive the features out of it. Alternatively, we can learn a direct mapping from input to its representation with an <strong>Autoencoder</strong>. Using autoencoders we learn to encode the input $x$ to a feature space and decode the original input from that space. Unlike probabilistic models where we maximize the data likelihood, we aim to minimize the reconstruction error while avoiding learning the identity function. An interesting point to note : if encoder and decoder use a sigmoid non-linearity, it is equivalent to binary RBMs (think about conditionals $p(h \mid x)$,$p(x \mid h)$, and probabilistic interpretation of sigmoid).</p>
 
-<p>In <strong>sparse autoencoders</strong>, we add L1 penalty for encoded representations to objective function so that only few of the hidden units are on for each instances. In <strong>denoising autoencoders</strong>, we corrupt the original input with some noise. Assuming data concentrate on a lower dimensional manifold, corrupted input is almost orthogonal to manifold, thus the autoencoder learns to denoise –from low-probabilirt inputs to high-probability ones, thus, creating a vector field towards to the manifold. In <strong>contractive autoencoders</strong>, we aim to learn robust representations (= instensitive to small input variations) by penalizing the Jacobian matrix of the encoder. This penalty is analytic and we can blend in the contractive penalty with a hyperparameter. (in fact check out <a href="https://github.com/wolet/autoencoders">my repo of autoencoder mixtures</a>).</p>
+<p>In <strong>sparse autoencoders</strong>, we add L1 penalty for encoded representations to objective function so that only few of the hidden units are on for each instances. In <strong>denoising autoencoders</strong>, we corrupt the original input with some noise. Assuming data concentrate on a lower dimensional manifold, corrupted input is almost orthogonal to manifold, thus the autoencoder learns to denoise –from low-probability inputs to high-probability ones, thus, creating a vector field towards to the manifold. In <strong>contractive autoencoders</strong>, we aim to learn robust representations (= instensitive to small input variations) by penalizing the Jacobian matrix of the encoder. This penalty is analytic and we can blend in the contractive penalty with a hyperparameter. (in fact check out <a href="https://github.com/wolet/autoencoders">my repo of autoencoder mixtures</a>).</p>
 
 <p>(to be continued from section 8)</p>
 ]]></content>
