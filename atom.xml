@@ -4,7 +4,7 @@
   <title><![CDATA[Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2016-01-18T14:13:10-05:00</updated>
+  <updated>2016-01-19T22:23:28-05:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tao of Research 0]]></title>
+    <link href="http://wolet.github.com/blog/tao-of-research-0/"/>
+    <updated>2016-01-19T13:47:38-05:00</updated>
+    <id>http://wolet.github.com/blog/tao-of-research-0</id>
+    <content type="html"><![CDATA[<p>One day a parchment arrives a temple after a gathering. A young mind notices that although they are highly related, one of their stories have not been referenced at all. He shar</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Representation Learning: A Review and New Perspectives]]></title>
@@ -23,9 +32,9 @@ Perspectives”</a>. The paper’s motivation is threefold : what are the 1) <em
 
 <hr />
 
-<p>How we represent the data to a Machine Learning (ML) model’s determines its sense of domain, consequently, its success. For many domains, feature engineering is one of the earliers steps in a ML pipeline. This labor-intensive effort shows that the existing ML algorithms, or the setup, is not able to extract discrimative information from raw data. To make prograss towards Artificial Intelligence (AI), our solutions shout be able to <strong>identify and disentagle the underlying explanatory hidden factors</strong> of the raw data.</p>
+<p>How we represent the data to a Machine Learning (ML) model determines its sense of the domain, consequently, its success. For many domains, feature engineering is one of the earliest steps in a ML pipeline. This labor-intensive effort shows that the existing ML algorithms, or the setup, is not able to extract discrimative information from raw data. To make prograss towards Artificial Intelligence (AI), our solutions should be able to <strong>identify and disentagle the underlying explanatory hidden factors</strong> of the raw data.</p>
 
-<p>We observe the impact of Representation Learning (RL) and Deep Learning (DL) in different domains. Early success of these models are in Speech Recognition. Now, we have many solutions for masses (such as Siri, Cortana, Google Now and Echo). The resurgence of DL models happenned on Object Recognition <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">(Krizhevsky et al., 2012)</a>. One of the main focus of the DL community is Natural Language Processing (NLP) and <a href="http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Bengio et. al. 2003</a> and <a href="http://www.jmlr.org/papers/volume12/collobert11a/collobert11a.pdf">Collobert et al. 2011</a> are prominent examples of the success of DL. Most notably, the success of DL models on Multi-Task and Transfer Learning challenges shows that the RL algorithms resulting representations capture underlying factors which may be relevant to different tasks. I think any DL-based models using pre-trained word vectors (whether the model finetunes it or not) are supporting this claim of the paper.</p>
+<p>We observe the impact of Representation Learning (RL) and Deep Learning (DL) in different domains. Early success of these models was in Speech Recognition. Now, we have many speech solutions on our devices such as Siri, Cortana, Google Now, and Echo. The resurgence of DL models happenned on Object Recognition <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">(Krizhevsky et al., 2012)</a>. Recently, Natural Language Processing (NLP) becomes one of the main focus of DL and RL. <a href="http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Bengio et. al. 2003</a> and <a href="http://www.jmlr.org/papers/volume12/collobert11a/collobert11a.pdf">Collobert et al. 2011</a> are prominent examples of the success of DL. Most notably, the success of DL models on Multi-Task and Transfer Learning challenges shows that the RL algorithms resulting representations capture underlying factors which may be relevant to different tasks. I think any DL-based models using pre-trained word vectors (whether the model finetunes it or not) are supporting this claim of the paper.</p>
 
 <p><strong>A recipe for good representation</strong></p>
 
