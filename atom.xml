@@ -4,7 +4,7 @@
   <title><![CDATA[Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2016-01-28T16:23:31-05:00</updated>
+  <updated>2016-02-04T16:22:06-05:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Visualizing and Understanding Recurrent Networks]]></title>
+    <link href="http://wolet.github.com/blog/visualizing-and-understanding-recurrent-networks/"/>
+    <updated>2016-02-04T16:21:02-05:00</updated>
+    <id>http://wolet.github.com/blog/visualizing-and-understanding-recurrent-networks</id>
+    <content type="html"><![CDATA[<p>Third reading of the semester is from Karpathy et. al. <a href="http://arxiv.org/pdf/1311.2901v3.pdf">Visualizing and Understanding Recurrent Networks
+</a>.
+I can’t write <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">a blog post</a> better than the first author. But, the paper is more than learning/having fun with RNNs, it provides valuable insights about how RNNs work.
+<a href="http://nbviewer.jupyter.org/gist/yoavg/d76121dfde2618422139">A follow-up post</a> from Goldberg is complementing the message conveyed in the paper.
+If you would like to cover the basics about sequential modelling with RNN these three readings are good starting points.</p>
+
+<hr />
+
+<p><img src="https://dl.dropboxusercontent.com/u/13917601/pap3_f1.png" alt="fig1" /></p>
+
+<p><strong>Deeper Models with Gating Mechanism are Better:</strong>  They compare vanilla RNN, GRU, and LSTM on Linux Kernel (LK) and Tolstoy’s War and Peace (WP) using character-level language modelling as a benchmark. In this <strong>fair comparison</strong>, gated models (I will refer LSTMs and GRUs as Gated RNNs from now on) are better than vanilla RNN. In addition, the depth of at least two is suggested. See above table.</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/13917601/pap3_f2.png" alt="fig2" /></p>
+
+<p><strong>Some Cells have Specific Roles:</strong> As seen above,  for $tanh(c)$ where -1 is red and +1 is blue, some cells are specializing in capturing some phenomenon such as counting lines, detecting quotes etc.  <strong>Question:</strong> what are other cells doing? <strong>Speculation:</strong> My bet is on helping approximation the function we would like to learn. They are not serving as a memory they are helping the computation.</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/13917601/pap3_f3.png" alt="fig3" /></p>
+
+<p><strong>In a Deep Gated RNN Lower Layers Don’t Employ Gating Mechanism:</strong> Let’s define left/right saturation for a gate. For a gate activation frequency, $0 \leq g_a \leq 1$, we say the gate is left saturated if $g_a &lt; 0.1$ and right saturated $g_a &gt; 0.9$. In English, if it’s right saturated corresponding gate information flows in (gate is almost always closed). If it’s left saturated gate often does not let information flow in (gate is open). Above figure show that in a deep net, lower layers do not employ gating mechanism. <strong>Question</strong> what if we train well a single layer gated RNN, do we see the same phenomenon? <strong>Speculation</strong> My bet is that we will not. The complexity of the model will change the characteristics of each layer. Thus, single layer gated RNN will have some gating cells.</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/13917601/pap3_f5.png" alt="fig4" /></p>
+
+<p><strong>Gated RNNs Learn To Generalize for Longer Sequences:</strong> One of the best news from this paper, it is nice to see a verification of common knowledge. Neural Network-based n-gram model overfits and fails to beat traditional n-gram model. However, for sequences greater than n, n-gram fails to generalize unlike gated RNN. RNNs history help it utilize information beyond 20 characters (See also Table 2 and Figure I in paper).</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/13917601/pap3_f4.png" alt="fig4" /></p>
+
+<p><strong>Gated RNNs Learn Special Functions Hinted in Data:</strong> When characters have special functions in data such as <em>”@,{,\r”</em>, gated RNN significantly better than n-gram model at predicting them. This hints that they probably learn to model their functionality. <strong>Question:</strong> What if each symbol has its own set of specific function? <strong>Speculation:</strong> We’ll see an increase in number of saturated/specializes cells in the network. A synthetic task may help us prove/disprove this speculation.</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/13917601/pap3_f6.png" alt="fig6" /></p>
+
+<p><strong>Gated RNNs Learn to Deal With Short-range Dependencies First</strong>: They use a brilliant way to show that Gated RNNs behave like a lower order n-gram NN first and generalize for higher orders later. Above graph shows the comparison of the similarity between a deep LSTM and the n-NN baselines over the early epochs of training. On the left the symmetric KL-divergence between models (how similar the loss distributions/predictions are) is shown. On the right, the difference in the mean loss is shown (positive loss means RNN outperforms).</p>
+
+<p><strong>Gated RNNs are not super efficient at utilizing the history:</strong> Section 4.4 of the paper shows a nice Error Analysis of the model – which is not common in DL community. They show how to breakdown errors types and conduct oracle experiments. My takeaway from that part is an n-gram help us eliminate 18% of errors. This shows that gated RNNs do not fully utilize the previous context. They fail to compress the history of seen characters even for the previous 9 characters. <strong>Question:</strong> Could there be a better memory-based model in addressing this? <strong>Speculation:</strong> Of course!</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Visualizing and Understanding Convolutional Neural Networks]]></title>
