@@ -4,7 +4,7 @@
   <title><![CDATA[Weblog of Volkan Cirik]]></title>
   <link href="http://wolet.github.com/atom.xml" rel="self"/>
   <link href="http://wolet.github.com/"/>
-  <updated>2017-03-26T01:01:53-04:00</updated>
+  <updated>2017-03-26T01:04:51-04:00</updated>
   <id>http://wolet.github.com/</id>
   <author>
     <name><![CDATA[Volkan Cirik]]></name>
@@ -24,8 +24,11 @@
 
 <p>The most of the book also is about his love of science and scientific integrity. I hope someday in future this book will be mandatory reading in graduate schools.</p>
 
-<p>Here’s a list of some quotes to remember:
-&gt; .. nothing at MIT had ever reminded me of my lab at home. Suddenly I realized why Princeton was getting results. They were working with the instrument. They <strong>built</strong> the instrument; they knew where everything was, they now how everything worked …</p>
+<p>Here’s a list of some quotes to remember:</p>
+
+<blockquote>
+  <p>.. nothing at MIT had ever reminded me of my lab at home. Suddenly I realized why Princeton was getting results. They were working with the instrument. They <strong>built</strong> the instrument; they knew where everything was, they now how everything worked …</p>
+</blockquote>
 
 <blockquote>
   <p>.. actually, there was a certain amount of genuine quality to my guesses. I had a scheme, which I still use today when somebody is explaining something that I’m trying to understand: I keep making up examples.</p>
