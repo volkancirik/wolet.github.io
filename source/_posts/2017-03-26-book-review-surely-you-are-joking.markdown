@@ -13,7 +13,8 @@ The most of the book also is about his love of science and scientific integrity.
 
 Here's a list of some quotes to remember:
 
-> .. nothing at MIT had ever reminded me of my lab at home. Suddenly I realized why Princeton was getting results. They were working with the instrument. They **built** the instrument; they knew where everything was, they now how everything worked ...
+
+> .. nothing at MIT had ever reminded me of my lab at home. Suddenly I realized why Princeton was getting results. They were working with the instrument. They *built* the instrument; they knew where everything was, they now how everything worked ...
 
 > .. actually, there was a certain amount of genuine quality to my guesses. I had a scheme, which I still use today when somebody is explaining something that I'm trying to understand: I keep making up examples.
 
