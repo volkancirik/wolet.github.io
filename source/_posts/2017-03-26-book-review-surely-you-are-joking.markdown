@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Book Review: Surely You are Joking"
+title: "Book Review: Surely You are Joking Mr Feynman"
 date: 2017-03-26 00:29:58 -0400
 comments: true
 categories: book
